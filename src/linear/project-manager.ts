@@ -22,27 +22,26 @@ export class ProjectManager {
     const sdk = this.client.getClient();
 
     try {
-      const projects = await sdk.projects({
-        filter: {
-          team: { id: { eq: teamId } },
-          name: { eq: projectName },
-        },
-      });
+      // Get team's projects and filter by name
+      const team = await sdk.team(teamId);
+      const projects = await team.projects();
 
-      if (projects.nodes.length === 0) {
-        return null;
+      for (const projectNode of projects.nodes) {
+        const project = await projectNode;
+        if (project.name === projectName) {
+          return {
+            id: project.id,
+            name: project.name,
+            description: project.description || undefined,
+            state: project.state,
+            url: project.url,
+            createdAt: project.createdAt,
+            updatedAt: project.updatedAt,
+          };
+        }
       }
 
-      const project = projects.nodes[0];
-      return {
-        id: project.id,
-        name: project.name,
-        description: project.description || undefined,
-        state: project.state,
-        url: project.url,
-        createdAt: project.createdAt,
-        updatedAt: project.updatedAt,
-      };
+      return null;
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       logger.error({ teamId, projectName, error: errorMessage }, 'Failed to find project');
@@ -72,10 +71,13 @@ export class ProjectManager {
         description: description || 'Automated project created from tasks.md sync',
       });
 
-      const project = projectPayload.project;
-      if (!project) {
+      const projectFetch = await projectPayload.project;
+      if (!projectFetch) {
         throw new Error('Failed to create project - no project returned');
       }
+
+      // Await the project fetch
+      const project = projectFetch;
 
       logger.info({ projectId: project.id, name }, 'Created Linear project');
 
