@@ -13,7 +13,7 @@ describe('ProjectManager', () => {
   beforeEach(() => {
     // Create SDK mock with methods
     mockSdk = {
-      projects: vi.fn(),
+      team: vi.fn(),
       createProject: vi.fn(),
     };
 
@@ -37,9 +37,13 @@ describe('ProjectManager', () => {
         updatedAt: new Date(),
       };
 
-      mockSdk.projects.mockResolvedValue({
-        nodes: [mockProject],
-      });
+      const mockTeam = {
+        projects: vi.fn().mockResolvedValue({
+          nodes: [mockProject],
+        }),
+      };
+
+      mockSdk.team.mockResolvedValue(mockTeam);
 
       const result = await projectManager.findProjectByName(
         'team-123',
@@ -47,18 +51,18 @@ describe('ProjectManager', () => {
       );
 
       expect(result).toEqual(mockProject);
-      expect(mockSdk.projects).toHaveBeenCalledWith({
-        filter: {
-          team: { id: { eq: 'team-123' } },
-          name: { eq: 'Linear-GitHub Automation' },
-        },
-      });
+      expect(mockSdk.team).toHaveBeenCalledWith('team-123');
+      expect(mockTeam.projects).toHaveBeenCalled();
     });
 
     it('should return null if project not found', async () => {
-      mockSdk.projects.mockResolvedValue({
-        nodes: [],
-      });
+      const mockTeam = {
+        projects: vi.fn().mockResolvedValue({
+          nodes: [],
+        }),
+      };
+
+      mockSdk.team.mockResolvedValue(mockTeam);
 
       const result = await projectManager.findProjectByName(
         'team-123',
@@ -137,9 +141,13 @@ describe('ProjectManager', () => {
         updatedAt: new Date(),
       };
 
-      mockSdk.projects.mockResolvedValue({
-        nodes: [existingProject],
-      });
+      const mockTeam = {
+        projects: vi.fn().mockResolvedValue({
+          nodes: [existingProject],
+        }),
+      };
+
+      mockSdk.team.mockResolvedValue(mockTeam);
 
       const result = await projectManager.findOrCreateProject(
         'team-123',
@@ -162,9 +170,13 @@ describe('ProjectManager', () => {
       };
 
       // First call: search returns empty
-      mockSdk.projects.mockResolvedValue({
-        nodes: [],
-      });
+      const mockTeam = {
+        projects: vi.fn().mockResolvedValue({
+          nodes: [],
+        }),
+      };
+
+      mockSdk.team.mockResolvedValue(mockTeam);
 
       // Second call: create project
       mockSdk.createProject.mockResolvedValue({
@@ -177,7 +189,8 @@ describe('ProjectManager', () => {
       );
 
       expect(result).toEqual(newProject);
-      expect(mockSdk.projects).toHaveBeenCalled();
+      expect(mockSdk.team).toHaveBeenCalledWith('team-123');
+      expect(mockTeam.projects).toHaveBeenCalled();
       expect(mockSdk.createProject).toHaveBeenCalled();
     });
   });

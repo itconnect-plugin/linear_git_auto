@@ -29,15 +29,7 @@ export class ProjectManager {
       for (const projectNode of projects.nodes) {
         const project = await projectNode;
         if (project.name === projectName) {
-          return {
-            id: project.id,
-            name: project.name,
-            description: project.description || undefined,
-            state: project.state,
-            url: project.url,
-            createdAt: project.createdAt,
-            updatedAt: project.updatedAt,
-          };
+          return this.mapToLinearProject(project);
         }
       }
 
@@ -71,25 +63,14 @@ export class ProjectManager {
         description: description || 'Automated project created from tasks.md sync',
       });
 
-      const projectFetch = await projectPayload.project;
-      if (!projectFetch) {
+      const project = await projectPayload.project;
+      if (!project) {
         throw new Error('Failed to create project - no project returned');
       }
 
-      // Await the project fetch
-      const project = projectFetch;
-
       logger.info({ projectId: project.id, name }, 'Created Linear project');
 
-      return {
-        id: project.id,
-        name: project.name,
-        description: project.description || undefined,
-        state: project.state,
-        url: project.url,
-        createdAt: project.createdAt,
-        updatedAt: project.updatedAt,
-      };
+      return this.mapToLinearProject(project);
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       logger.error({ teamId, name, error: errorMessage }, 'Failed to create project');
@@ -122,5 +103,23 @@ export class ProjectManager {
 
     // Create new project if not found
     return this.createProject(teamId, projectName, description);
+  }
+
+  /**
+   * Maps a Linear SDK Project object to our LinearProject interface.
+   *
+   * @param project - Linear SDK Project object
+   * @returns LinearProject interface object
+   */
+  private mapToLinearProject(project: any): LinearProject {
+    return {
+      id: project.id,
+      name: project.name,
+      description: project.description || undefined,
+      state: project.state,
+      url: project.url,
+      createdAt: project.createdAt,
+      updatedAt: project.updatedAt,
+    };
   }
 }
