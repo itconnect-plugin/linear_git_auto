@@ -1,0 +1,692 @@
+[
+  {
+    "taskId": "T001",
+    "taskTitle": "Create project structure with src/, tests/, and .specify/ directories",
+    "linearIssueId": "ITC-51",
+    "linearIssueUuid": "82f34240-2e4a-4e9f-a722-78845b4e4973",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-51/create-project-structure-with-src-tests-and-specify-directories",
+    "branchName": "ITC-51-create-project-structure-with-src-tests-and-specif",
+    "createdAt": "2025-10-21T04:51:45.244Z",
+    "updatedAt": "2025-10-21T04:51:45.244Z"
+  },
+  {
+    "taskId": "T002",
+    "taskTitle": "Initialize TypeScript project with Node.js 20 LTS and configure tsconfig.json",
+    "linearIssueId": "ITC-52",
+    "linearIssueUuid": "afc6efbf-69b5-4f06-8157-1f1c05c14ff8",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-52/initialize-typescript-project-with-nodejs-20-lts-and-configure",
+    "branchName": "ITC-52-initialize-typescript-project-with-node-js-20-lts-",
+    "createdAt": "2025-10-21T04:51:45.985Z",
+    "updatedAt": "2025-10-21T04:51:45.985Z"
+  },
+  {
+    "taskId": "T003",
+    "taskTitle": "Install core dependencies (@linear/sdk ^20.0, @octokit/rest ^20.0, commander ^11.0, inquirer ^9.0, pino ^8.0, vitest ^1.0)",
+    "linearIssueId": "ITC-53",
+    "linearIssueUuid": "7507c5e1-43a8-42ad-9fec-f8a5c8a71b98",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-53/install-core-dependencies-linearsdk-200-octokitrest-200-commander-110",
+    "branchName": "ITC-53-install-core-dependencies-linear-sdk-20-0-octokit-",
+    "createdAt": "2025-10-21T04:51:46.773Z",
+    "updatedAt": "2025-10-21T04:51:46.773Z"
+  },
+  {
+    "taskId": "T004",
+    "taskTitle": "Configure ESLint and Prettier for TypeScript code formatting",
+    "linearIssueId": "ITC-54",
+    "linearIssueUuid": "67563855-5bf2-45e6-96c4-21d7ed128334",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-54/configure-eslint-and-prettier-for-typescript-code-formatting",
+    "branchName": "ITC-54-configure-eslint-and-prettier-for-typescript-code-",
+    "createdAt": "2025-10-21T04:51:47.505Z",
+    "updatedAt": "2025-10-21T04:51:47.505Z"
+  },
+  {
+    "taskId": "T005",
+    "taskTitle": "Setup Vitest configuration in vitest.config.ts",
+    "linearIssueId": "ITC-55",
+    "linearIssueUuid": "c694b699-b57c-4a48-9a3e-9a88cc71d0e4",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-55/setup-vitest-configuration-in-vitestconfigts",
+    "branchName": "ITC-55-setup-vitest-configuration-in-vitest-config-ts",
+    "createdAt": "2025-10-21T04:51:48.258Z",
+    "updatedAt": "2025-10-21T04:51:48.258Z"
+  },
+  {
+    "taskId": "T006",
+    "taskTitle": "Create package.json with CLI bin entry for global installation",
+    "linearIssueId": "ITC-56",
+    "linearIssueUuid": "2940bb5b-2305-40ad-82d7-05aa1347cef4",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-56/create-packagejson-with-cli-bin-entry-for-global-installation",
+    "branchName": "ITC-56-create-package-json-with-cli-bin-entry-for-global-",
+    "createdAt": "2025-10-21T04:51:49.030Z",
+    "updatedAt": "2025-10-21T04:51:49.030Z"
+  },
+  {
+    "taskId": "T007",
+    "taskTitle": "Create .env.example file with required environment variables (LINEAR_API_KEY, LINEAR_TEAM_ID)",
+    "linearIssueId": "ITC-57",
+    "linearIssueUuid": "5617d6b5-cae6-4f5c-a51b-31281aaf4ccf",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-57/create-envexample-file-with-required-environment-variables-linear-api",
+    "branchName": "ITC-57-create-env-example-file-with-required-environment-",
+    "createdAt": "2025-10-21T04:51:49.787Z",
+    "updatedAt": "2025-10-21T04:51:49.787Z"
+  },
+  {
+    "taskId": "T008",
+    "taskTitle": "Setup Git hooks directory structure and scripts in src/hooks/",
+    "linearIssueId": "ITC-58",
+    "linearIssueUuid": "684491e5-9ff5-438f-8f01-ee0ec1e92aab",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-58/setup-git-hooks-directory-structure-and-scripts-in-srchooks",
+    "branchName": "ITC-58-setup-git-hooks-directory-structure-and-scripts-in",
+    "createdAt": "2025-10-21T04:51:50.577Z",
+    "updatedAt": "2025-10-21T04:51:50.577Z"
+  },
+  {
+    "taskId": "T009",
+    "taskTitle": "Create configuration management module in src/config/index.ts (loads environment variables)",
+    "linearIssueId": "ITC-59",
+    "linearIssueUuid": "26d494e1-7198-4852-896c-772ab9407d28",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-59/create-configuration-management-module-in-srcconfigindexts-loads",
+    "branchName": "ITC-59-create-configuration-management-module-in-src-conf",
+    "createdAt": "2025-10-21T04:51:51.380Z",
+    "updatedAt": "2025-10-21T04:51:51.380Z"
+  },
+  {
+    "taskId": "T010",
+    "taskTitle": "Implement structured logging with Pino in src/lib/logger.ts (JSON format with redaction)",
+    "linearIssueId": "ITC-60",
+    "linearIssueUuid": "cf561d68-fbfc-4309-afb8-efebe2477118",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-60/implement-structured-logging-with-pino-in-srclibloggerts-json-format",
+    "branchName": "ITC-60-implement-structured-logging-with-pino-in-src-lib-",
+    "createdAt": "2025-10-21T04:51:52.117Z",
+    "updatedAt": "2025-10-21T04:51:52.117Z"
+  },
+  {
+    "taskId": "T011",
+    "taskTitle": "Create retry logic with exponential backoff in src/lib/retry.ts (max 3 attempts per constitution)",
+    "linearIssueId": "ITC-61",
+    "linearIssueUuid": "e011b00d-bfd8-4833-a74c-94f534b6c246",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-61/create-retry-logic-with-exponential-backoff-in-srclibretryts-max-3",
+    "branchName": "ITC-61-create-retry-logic-with-exponential-backoff-in-src",
+    "createdAt": "2025-10-21T04:51:52.832Z",
+    "updatedAt": "2025-10-21T04:51:52.832Z"
+  },
+  {
+    "taskId": "T012",
+    "taskTitle": "Implement Linear API client wrapper in src/linear/client.ts (authentication, error handling)",
+    "linearIssueId": "ITC-62",
+    "linearIssueUuid": "33a04188-8424-4f71-9cac-a194efe64886",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-62/implement-linear-api-client-wrapper-in-srclinearclientts",
+    "branchName": "ITC-62-implement-linear-api-client-wrapper-in-src-linear-",
+    "createdAt": "2025-10-21T04:51:53.580Z",
+    "updatedAt": "2025-10-21T04:51:53.580Z"
+  },
+  {
+    "taskId": "T013",
+    "taskTitle": "Implement branch name validator in src/github/branch-validator.ts (pattern: [A-Z]+-[0-9]+-[\\w-]+)",
+    "linearIssueId": "ITC-63",
+    "linearIssueUuid": "464d8f5e-cf52-4794-b72a-4b21c902e2ce",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-63/implement-branch-name-validator-in-srcgithubbranch-validatorts-pattern",
+    "branchName": "ITC-63-implement-branch-name-validator-in-src-github-bran",
+    "createdAt": "2025-10-21T04:51:54.308Z",
+    "updatedAt": "2025-10-21T04:51:54.308Z"
+  },
+  {
+    "taskId": "T014",
+    "taskTitle": "Create mapping file manager in src/mapping/manager.ts (read/write .specify/linear-mapping.json)",
+    "linearIssueId": "ITC-64",
+    "linearIssueUuid": "aa45210b-d39c-4f27-a293-a4cbf7839d94",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-64/create-mapping-file-manager-in-srcmappingmanagerts-readwrite",
+    "branchName": "ITC-64-create-mapping-file-manager-in-src-mapping-manager",
+    "createdAt": "2025-10-21T04:51:55.021Z",
+    "updatedAt": "2025-10-21T04:51:55.021Z"
+  },
+  {
+    "taskId": "T015",
+    "taskTitle": "Create TypeScript types for Task, TaskMapping, LinearIssue, PullRequest entities in src/types/index.ts",
+    "linearIssueId": "ITC-65",
+    "linearIssueUuid": "07474b46-ab8a-4a45-a9b1-e0afdaeae6e3",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-65/create-typescript-types-for-task-taskmapping-linearissue-pullrequest",
+    "branchName": "ITC-65-create-typescript-types-for-task-taskmapping-linea",
+    "createdAt": "2025-10-21T04:51:55.725Z",
+    "updatedAt": "2025-10-21T04:51:55.725Z"
+  },
+  {
+    "taskId": "T016",
+    "taskTitle": "Setup error handling utilities in src/lib/errors.ts (custom error classes)",
+    "linearIssueId": "ITC-66",
+    "linearIssueUuid": "697041f7-f00e-4e83-902c-7828068913ab",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-66/setup-error-handling-utilities-in-srcliberrorsts-custom-error-classes",
+    "branchName": "ITC-66-setup-error-handling-utilities-in-src-lib-errors-t",
+    "createdAt": "2025-10-21T04:51:56.453Z",
+    "updatedAt": "2025-10-21T04:51:56.453Z"
+  },
+  {
+    "taskId": "T017",
+    "taskTitle": "Implement tasks.md parser in src/parsers/tasks-parser.ts (extract task ID, title, description, metadata)",
+    "linearIssueId": "ITC-67",
+    "linearIssueUuid": "38ce9a25-6427-4c01-b200-7887081cf0a8",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-67/implement-tasksmd-parser-in-srcparserstasks-parserts-extract-task-id",
+    "branchName": "ITC-67-implement-tasks-md-parser-in-src-parsers-tasks-par",
+    "createdAt": "2025-10-21T04:51:57.346Z",
+    "updatedAt": "2025-10-21T04:51:57.346Z"
+  },
+  {
+    "taskId": "T018",
+    "taskTitle": "Create task metadata extractor in src/parsers/metadata-extractor.ts (parse , [US#], phase tags)",
+    "linearIssueId": "ITC-68",
+    "linearIssueUuid": "f35dc827-48f9-4e06-b0de-570a57fc9b14",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-68/create-task-metadata-extractor-in-srcparsersmetadata-extractorts-parse",
+    "branchName": "ITC-68-create-task-metadata-extractor-in-src-parsers-meta",
+    "createdAt": "2025-10-21T04:51:58.141Z",
+    "updatedAt": "2025-10-21T04:51:58.141Z"
+  },
+  {
+    "taskId": "T019",
+    "taskTitle": "Implement dependency parser in src/parsers/dependency-parser.ts (extract task dependencies from descriptions)",
+    "linearIssueId": "ITC-69",
+    "linearIssueUuid": "c29d73e4-e72e-407b-af87-8f8e7e96fae0",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-69/implement-dependency-parser-in-srcparsersdependency-parserts-extract",
+    "branchName": "ITC-69-implement-dependency-parser-in-src-parsers-depende",
+    "createdAt": "2025-10-21T04:51:58.857Z",
+    "updatedAt": "2025-10-21T04:51:58.857Z"
+  },
+  {
+    "taskId": "T020",
+    "taskTitle": "Create Linear label manager in src/linear/label-manager.ts (create/find labels for user stories, phases, priority)",
+    "linearIssueId": "ITC-70",
+    "linearIssueUuid": "a7818900-7e33-44bb-9185-2ab88603a1b5",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-70/create-linear-label-manager-in-srclinearlabel-managerts-createfind",
+    "branchName": "ITC-70-create-linear-label-manager-in-src-linear-label-ma",
+    "createdAt": "2025-10-21T04:51:59.634Z",
+    "updatedAt": "2025-10-21T04:51:59.634Z"
+  },
+  {
+    "taskId": "T021",
+    "taskTitle": "Implement Linear issue creator in src/linear/issue-creator.ts (format description, create issue, handle labels)",
+    "linearIssueId": "ITC-71",
+    "linearIssueUuid": "99658d28-5fca-4a95-84d7-119c48679328",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-71/implement-linear-issue-creator-in-srclinearissue-creatorts-format",
+    "branchName": "ITC-71-implement-linear-issue-creator-in-src-linear-issue",
+    "createdAt": "2025-10-21T04:52:02.472Z",
+    "updatedAt": "2025-10-21T04:52:02.472Z"
+  },
+  {
+    "taskId": "T022",
+    "taskTitle": "Build sync orchestrator in src/sync/orchestrator.ts (task → Linear sync flow, deduplication via mapping file)",
+    "linearIssueId": "ITC-72",
+    "linearIssueUuid": "5a2dd8a4-3681-42fd-b693-0d27daf4475a",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-72/build-sync-orchestrator-in-srcsyncorchestratorts-task-→-linear-sync",
+    "branchName": "ITC-72-build-sync-orchestrator-in-src-sync-orchestrator-t",
+    "createdAt": "2025-10-21T04:52:03.251Z",
+    "updatedAt": "2025-10-21T04:52:03.251Z"
+  },
+  {
+    "taskId": "T023",
+    "taskTitle": "Implement duplicate detection in src/sync/dedup.ts (check mapping file, prompt user on conflicts)",
+    "linearIssueId": "ITC-73",
+    "linearIssueUuid": "f0c59308-1284-4eca-9fbe-87b95001f028",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-73/implement-duplicate-detection-in-srcsyncdedupts-check-mapping-file",
+    "branchName": "ITC-73-implement-duplicate-detection-in-src-sync-dedup-ts",
+    "createdAt": "2025-10-21T04:52:04.002Z",
+    "updatedAt": "2025-10-21T04:52:04.002Z"
+  },
+  {
+    "taskId": "T024",
+    "taskTitle": "Create branch name generator in src/sync/branch-generator.ts (generate ABC-123-task-slug format)",
+    "linearIssueId": "ITC-74",
+    "linearIssueUuid": "f00d988c-3a56-4983-b1ce-ea5989c3815d",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-74/create-branch-name-generator-in-srcsyncbranch-generatorts-generate-abc",
+    "branchName": "ITC-74-create-branch-name-generator-in-src-sync-branch-ge",
+    "createdAt": "2025-10-21T04:52:04.752Z",
+    "updatedAt": "2025-10-21T04:52:04.752Z"
+  },
+  {
+    "taskId": "T025",
+    "taskTitle": "Implement CLI init command in src/cli/commands/init.ts (configure tokens, team ID, install Git hooks)",
+    "linearIssueId": "ITC-75",
+    "linearIssueUuid": "14dda0e8-2e4e-4376-a449-ea82bd2df7cf",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-75/implement-cli-init-command-in-srcclicommandsinitts-configure-tokens",
+    "branchName": "ITC-75-implement-cli-init-command-in-src-cli-commands-ini",
+    "createdAt": "2025-10-21T04:52:05.511Z",
+    "updatedAt": "2025-10-21T04:52:05.511Z"
+  },
+  {
+    "taskId": "T026",
+    "taskTitle": "Implement CLI run command in src/cli/commands/run.ts (trigger sync orchestrator, show progress)",
+    "linearIssueId": "ITC-76",
+    "linearIssueUuid": "3de0cdf6-f973-485c-9253-2344b9f7b483",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-76/implement-cli-run-command-in-srcclicommandsrunts-trigger-sync",
+    "branchName": "ITC-76-implement-cli-run-command-in-src-cli-commands-run-",
+    "createdAt": "2025-10-21T04:52:06.256Z",
+    "updatedAt": "2025-10-21T04:52:06.256Z"
+  },
+  {
+    "taskId": "T027",
+    "taskTitle": "Implement CLI status command in src/cli/commands/status.ts (show mapping stats, API connection status)",
+    "linearIssueId": "ITC-77",
+    "linearIssueUuid": "2d7052b3-f582-43c0-b412-2e4cc1f7b347",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-77/implement-cli-status-command-in-srcclicommandsstatusts-show-mapping",
+    "branchName": "ITC-77-implement-cli-status-command-in-src-cli-commands-s",
+    "createdAt": "2025-10-21T04:52:06.991Z",
+    "updatedAt": "2025-10-21T04:52:06.991Z"
+  },
+  {
+    "taskId": "T028",
+    "taskTitle": "Create main CLI entry point in src/cli/index.ts (commander setup with all commands)",
+    "linearIssueId": "ITC-78",
+    "linearIssueUuid": "32ad4d70-8add-4067-b402-b81c6c2109db",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-78/create-main-cli-entry-point-in-srccliindexts-commander-setup-with-all",
+    "branchName": "ITC-78-create-main-cli-entry-point-in-src-cli-index-ts-co",
+    "createdAt": "2025-10-21T04:52:07.735Z",
+    "updatedAt": "2025-10-21T04:52:07.735Z"
+  },
+  {
+    "taskId": "T029",
+    "taskTitle": "Add sync event logging throughout sync operations (log all create/update/skip operations with structured data)",
+    "linearIssueId": "ITC-79",
+    "linearIssueUuid": "e97974c2-d96d-4e38-81ec-f0a72ff85d22",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-79/add-sync-event-logging-throughout-sync-operations-log-all",
+    "branchName": "ITC-79-add-sync-event-logging-throughout-sync-operations-",
+    "createdAt": "2025-10-21T04:52:08.486Z",
+    "updatedAt": "2025-10-21T04:52:08.486Z"
+  },
+  {
+    "taskId": "T030",
+    "taskTitle": "Create prepare-commit-msg Git hook script in src/hooks/prepare-commit-msg.sh (auto-inject Linear ID from branch name)",
+    "linearIssueId": "ITC-80",
+    "linearIssueUuid": "b7e62733-eb4b-4be2-b16a-0bc4168abcc7",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-80/create-prepare-commit-msg-git-hook-script-in-srchooksprepare-commit",
+    "branchName": "ITC-80-create-prepare-commit-msg-git-hook-script-in-src-h",
+    "createdAt": "2025-10-21T04:52:09.223Z",
+    "updatedAt": "2025-10-21T04:52:09.223Z"
+  },
+  {
+    "taskId": "T031",
+    "taskTitle": "Implement Git hook installer in src/cli/commands/init.ts (copy hook to .git/hooks/, set executable permissions)",
+    "linearIssueId": "ITC-81",
+    "linearIssueUuid": "6e92fe0e-ccdf-400a-8a28-53a31847ecc5",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-81/implement-git-hook-installer-in-srcclicommandsinitts-copy-hook-to",
+    "branchName": "ITC-81-implement-git-hook-installer-in-src-cli-commands-i",
+    "createdAt": "2025-10-21T04:52:09.974Z",
+    "updatedAt": "2025-10-21T04:52:09.974Z"
+  },
+  {
+    "taskId": "T032",
+    "taskTitle": "Create interactive task selector in src/cli/commands/start-task.ts (inquirer-based selection from mapping file)",
+    "linearIssueId": "ITC-82",
+    "linearIssueUuid": "fb18284c-4839-4552-b7d7-23dd987d3e36",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-82/create-interactive-task-selector-in-srcclicommandsstart-taskts",
+    "branchName": "ITC-82-create-interactive-task-selector-in-src-cli-comman",
+    "createdAt": "2025-10-21T04:52:10.701Z",
+    "updatedAt": "2025-10-21T04:52:10.701Z"
+  },
+  {
+    "taskId": "T033",
+    "taskTitle": "Implement branch creation logic in src/cli/commands/start-task.ts (git checkout with Linear issue ID pattern)",
+    "linearIssueId": "ITC-83",
+    "linearIssueUuid": "08365a7b-2891-4733-8d64-3ee16357b463",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-83/implement-branch-creation-logic-in-srcclicommandsstart-taskts-git",
+    "branchName": "ITC-83-implement-branch-creation-logic-in-src-cli-command",
+    "createdAt": "2025-10-21T04:52:11.476Z",
+    "updatedAt": "2025-10-21T04:52:11.476Z"
+  },
+  {
+    "taskId": "T034",
+    "taskTitle": "Add branch validation checks in src/cli/commands/start-task.ts (verify branch name follows pattern, handle existing branches)",
+    "linearIssueId": "ITC-84",
+    "linearIssueUuid": "992cdc1d-757a-4db5-8072-a7387c1c532e",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-84/add-branch-validation-checks-in-srcclicommandsstart-taskts-verify",
+    "branchName": "ITC-84-add-branch-validation-checks-in-src-cli-commands-s",
+    "createdAt": "2025-10-21T04:52:12.251Z",
+    "updatedAt": "2025-10-21T04:52:12.251Z"
+  },
+  {
+    "taskId": "T035",
+    "taskTitle": "Create issue ID extractor utility in src/github/issue-extractor.ts (extract from branch names and commit messages)",
+    "linearIssueId": "ITC-85",
+    "linearIssueUuid": "221cef5e-c63b-4b84-ad8d-c3bb2c214ffa",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-85/create-issue-id-extractor-utility-in-srcgithubissue-extractorts",
+    "branchName": "ITC-85-create-issue-id-extractor-utility-in-src-github-is",
+    "createdAt": "2025-10-21T04:52:13.022Z",
+    "updatedAt": "2025-10-21T04:52:13.022Z"
+  },
+  {
+    "taskId": "T036",
+    "taskTitle": "Update CLI status command to show Git hooks installation status",
+    "linearIssueId": "ITC-86",
+    "linearIssueUuid": "fb44383d-302f-43de-8a96-d16455edeb25",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-86/update-cli-status-command-to-show-git-hooks-installation-status",
+    "branchName": "ITC-86-update-cli-status-command-to-show-git-hooks-instal",
+    "createdAt": "2025-10-21T04:52:13.810Z",
+    "updatedAt": "2025-10-21T04:52:13.810Z"
+  },
+  {
+    "taskId": "T037",
+    "taskTitle": "Document Linear GitHub Integration setup in quickstart.md (configuration steps, verification)",
+    "linearIssueId": "ITC-87",
+    "linearIssueUuid": "f1ff49d6-f89f-429b-9833-378f18cb8e63",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-87/document-linear-github-integration-setup-in-quickstartmd-configuration",
+    "branchName": "ITC-87-document-linear-github-integration-setup-in-quicks",
+    "createdAt": "2025-10-21T04:52:14.547Z",
+    "updatedAt": "2025-10-21T04:52:14.547Z"
+  },
+  {
+    "taskId": "T038",
+    "taskTitle": "Add Linear integration validation to CLI init command (verify integration is configured)",
+    "linearIssueId": "ITC-88",
+    "linearIssueUuid": "a8e7211e-a285-4b2b-844f-5ee5c08b16ca",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-88/add-linear-integration-validation-to-cli-init-command-verify",
+    "branchName": "ITC-88-add-linear-integration-validation-to-cli-init-comm",
+    "createdAt": "2025-10-21T04:52:15.278Z",
+    "updatedAt": "2025-10-21T04:52:15.278Z"
+  },
+  {
+    "taskId": "T039",
+    "taskTitle": "Create branch naming validation in CLI start-task command (enforce pattern for Linear auto-detection)",
+    "linearIssueId": "ITC-89",
+    "linearIssueUuid": "2e2ee97d-aaf6-4a33-920b-276281634bbd",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-89/create-branch-naming-validation-in-cli-start-task-command-enforce",
+    "branchName": "ITC-89-create-branch-naming-validation-in-cli-start-task-",
+    "createdAt": "2025-10-21T04:52:16.061Z",
+    "updatedAt": "2025-10-21T04:52:16.061Z"
+  },
+  {
+    "taskId": "T040",
+    "taskTitle": "Add Linear issue URL display in CLI start-task output (guide developers to configure integration)",
+    "linearIssueId": "ITC-90",
+    "linearIssueUuid": "0e7bd1b2-19f5-4a86-882d-dd2ff36778ac",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-90/add-linear-issue-url-display-in-cli-start-task-output-guide-developers",
+    "branchName": "ITC-90-add-linear-issue-url-display-in-cli-start-task-out",
+    "createdAt": "2025-10-21T04:52:16.895Z",
+    "updatedAt": "2025-10-21T04:52:16.895Z"
+  },
+  {
+    "taskId": "T041",
+    "taskTitle": "Update CLI status command to show Linear GitHub Integration configuration status",
+    "linearIssueId": "ITC-91",
+    "linearIssueUuid": "13ab2494-a863-42c5-a406-31f960bcb54e",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-91/update-cli-status-command-to-show-linear-github-integration",
+    "branchName": "ITC-91-update-cli-status-command-to-show-linear-github-in",
+    "createdAt": "2025-10-21T04:52:17.647Z",
+    "updatedAt": "2025-10-21T04:52:17.647Z"
+  },
+  {
+    "taskId": "T042",
+    "taskTitle": "Add logging for Linear status change detection (Phase 2 preparation - webhook event handling structure)",
+    "linearIssueId": "ITC-92",
+    "linearIssueUuid": "7c1fee25-5de3-46db-a396-07b44492c60c",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-92/add-logging-for-linear-status-change-detection-phase-2-preparation",
+    "branchName": "ITC-92-add-logging-for-linear-status-change-detection-pha",
+    "createdAt": "2025-10-21T04:52:18.368Z",
+    "updatedAt": "2025-10-21T04:52:18.368Z"
+  },
+  {
+    "taskId": "T043",
+    "taskTitle": "Write unit tests for tasks.md parser in tests/unit/parsers/tasks-parser.test.ts (validate parsing logic)",
+    "linearIssueId": "ITC-93",
+    "linearIssueUuid": "5bbd24df-eeb6-4a5a-bdcb-4201b0401afb",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-93/write-unit-tests-for-tasksmd-parser-in-testsunitparserstasks",
+    "branchName": "ITC-93-write-unit-tests-for-tasks-md-parser-in-tests-unit",
+    "createdAt": "2025-10-21T04:52:19.129Z",
+    "updatedAt": "2025-10-21T04:52:19.129Z"
+  },
+  {
+    "taskId": "T044",
+    "taskTitle": "Write unit tests for metadata extractor in tests/unit/parsers/metadata-extractor.test.ts (test , [US#] extraction)",
+    "linearIssueId": "ITC-94",
+    "linearIssueUuid": "4856ea61-4fb9-4db8-93e8-a5edc9f19352",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-94/write-unit-tests-for-metadata-extractor-in-testsunitparsersmetadata",
+    "branchName": "ITC-94-write-unit-tests-for-metadata-extractor-in-tests-u",
+    "createdAt": "2025-10-21T04:52:19.852Z",
+    "updatedAt": "2025-10-21T04:52:19.852Z"
+  },
+  {
+    "taskId": "T045",
+    "taskTitle": "Write unit tests for branch name validator in tests/unit/github/branch-validator.test.ts (pattern matching)",
+    "linearIssueId": "ITC-95",
+    "linearIssueUuid": "7280be65-05a1-480a-ac66-f1c81aae602b",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-95/write-unit-tests-for-branch-name-validator-in-testsunitgithubbranch",
+    "branchName": "ITC-95-write-unit-tests-for-branch-name-validator-in-test",
+    "createdAt": "2025-10-21T04:52:20.581Z",
+    "updatedAt": "2025-10-21T04:52:20.581Z"
+  },
+  {
+    "taskId": "T046",
+    "taskTitle": "Write unit tests for mapping file manager in tests/unit/mapping/manager.test.ts (CRUD operations)",
+    "linearIssueId": "ITC-96",
+    "linearIssueUuid": "545e543c-460d-4255-9540-929714d77630",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-96/write-unit-tests-for-mapping-file-manager-in",
+    "branchName": "ITC-96-write-unit-tests-for-mapping-file-manager-in-tests",
+    "createdAt": "2025-10-21T04:52:21.290Z",
+    "updatedAt": "2025-10-21T04:52:21.290Z"
+  },
+  {
+    "taskId": "T047",
+    "taskTitle": "Write unit tests for retry logic in tests/unit/lib/retry.test.ts (exponential backoff, max attempts)",
+    "linearIssueId": "ITC-97",
+    "linearIssueUuid": "96391d16-29a0-44cc-bb69-c0fd417a9f89",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-97/write-unit-tests-for-retry-logic-in-testsunitlibretrytestts",
+    "branchName": "ITC-97-write-unit-tests-for-retry-logic-in-tests-unit-lib",
+    "createdAt": "2025-10-21T04:52:22.043Z",
+    "updatedAt": "2025-10-21T04:52:22.043Z"
+  },
+  {
+    "taskId": "T048",
+    "taskTitle": "Write unit tests for duplicate detection in tests/unit/sync/dedup.test.ts (mapping file checks)",
+    "linearIssueId": "ITC-98",
+    "linearIssueUuid": "a700423b-d5d6-43d7-903f-f3c91a691f78",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-98/write-unit-tests-for-duplicate-detection-in-testsunitsyncdeduptestts",
+    "branchName": "ITC-98-write-unit-tests-for-duplicate-detection-in-tests-",
+    "createdAt": "2025-10-21T04:52:22.769Z",
+    "updatedAt": "2025-10-21T04:52:22.769Z"
+  },
+  {
+    "taskId": "T049",
+    "taskTitle": "Write unit tests for branch name generator in tests/unit/sync/branch-generator.test.ts (slug generation)",
+    "linearIssueId": "ITC-99",
+    "linearIssueUuid": "047cbb78-5471-47f5-97c6-51bc62cad658",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-99/write-unit-tests-for-branch-name-generator-in-testsunitsyncbranch",
+    "branchName": "ITC-99-write-unit-tests-for-branch-name-generator-in-test",
+    "createdAt": "2025-10-21T04:52:23.517Z",
+    "updatedAt": "2025-10-21T04:52:23.517Z"
+  },
+  {
+    "taskId": "T050",
+    "taskTitle": "Write unit tests for issue ID extractor in tests/unit/github/issue-extractor.test.ts (extraction from various formats)",
+    "linearIssueId": "ITC-100",
+    "linearIssueUuid": "3ec96792-3b27-4848-97d5-01fa9bddf7d3",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-100/write-unit-tests-for-issue-id-extractor-in-testsunitgithubissue",
+    "branchName": "ITC-100-write-unit-tests-for-issue-id-extractor-in-tests-u",
+    "createdAt": "2025-10-21T04:52:24.302Z",
+    "updatedAt": "2025-10-21T04:52:24.302Z"
+  },
+  {
+    "taskId": "T051",
+    "taskTitle": "Write Linear API contract tests in tests/contract/linear-api.test.ts (issue creation, label management with MSW mocks)",
+    "linearIssueId": "ITC-101",
+    "linearIssueUuid": "31989bfb-c3bc-4b52-aaf8-c9dc86c90b3d",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-101/write-linear-api-contract-tests-in-testscontractlinear-apitestts-issue",
+    "branchName": "ITC-101-write-linear-api-contract-tests-in-tests-contract-",
+    "createdAt": "2025-10-21T04:52:25.048Z",
+    "updatedAt": "2025-10-21T04:52:25.048Z"
+  },
+  {
+    "taskId": "T052",
+    "taskTitle": "Write GitHub branch validation contract tests in tests/contract/github-branch.test.ts (pattern validation edge cases)",
+    "linearIssueId": "ITC-102",
+    "linearIssueUuid": "ac95ca16-ed08-4815-a47d-487cec3dc01c",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-102/write-github-branch-validation-contract-tests-in-testscontractgithub",
+    "branchName": "ITC-102-write-github-branch-validation-contract-tests-in-t",
+    "createdAt": "2025-10-21T04:52:25.812Z",
+    "updatedAt": "2025-10-21T04:52:25.812Z"
+  },
+  {
+    "taskId": "T053",
+    "taskTitle": "Write mapping file contract tests in tests/contract/mapping-file.test.ts (JSON schema validation)",
+    "linearIssueId": "ITC-103",
+    "linearIssueUuid": "b61a5124-a3df-4c16-8c62-0c5e4ec9ca8d",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-103/write-mapping-file-contract-tests-in-testscontractmapping-filetestts",
+    "branchName": "ITC-103-write-mapping-file-contract-tests-in-tests-contrac",
+    "createdAt": "2025-10-21T04:52:26.624Z",
+    "updatedAt": "2025-10-21T04:52:26.624Z"
+  },
+  {
+    "taskId": "T054",
+    "taskTitle": "Write end-to-end sync test in tests/integration/sync-e2e.test.ts (tasks.md → Linear with real/sandbox API)",
+    "linearIssueId": "ITC-104",
+    "linearIssueUuid": "fb26e704-799f-438f-9be4-715d01d55a08",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-104/write-end-to-end-sync-test-in-testsintegrationsync-e2etestts-tasksmd-→",
+    "branchName": "ITC-104-write-end-to-end-sync-test-in-tests-integration-sy",
+    "createdAt": "2025-10-21T04:52:27.390Z",
+    "updatedAt": "2025-10-21T04:52:27.390Z"
+  },
+  {
+    "taskId": "T055",
+    "taskTitle": "Write Git hook integration test in tests/integration/git-hooks.test.ts (commit message automation)",
+    "linearIssueId": "ITC-105",
+    "linearIssueUuid": "1220f2cf-d72d-456d-80b0-d8ed0a3d2067",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-105/write-git-hook-integration-test-in-testsintegrationgit-hookstestts",
+    "branchName": "ITC-105-write-git-hook-integration-test-in-tests-integrati",
+    "createdAt": "2025-10-21T04:52:28.140Z",
+    "updatedAt": "2025-10-21T04:52:28.140Z"
+  },
+  {
+    "taskId": "T056",
+    "taskTitle": "Write CLI workflow test in tests/integration/cli-workflow.test.ts (init → run → start-task → status sequence)",
+    "linearIssueId": "ITC-106",
+    "linearIssueUuid": "abfbfd97-d6e7-4ba0-849f-d88b617fac4b",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-106/write-cli-workflow-test-in-testsintegrationcli-workflowtestts-init-→",
+    "branchName": "ITC-106-write-cli-workflow-test-in-tests-integration-cli-w",
+    "createdAt": "2025-10-21T04:52:28.881Z",
+    "updatedAt": "2025-10-21T04:52:28.881Z"
+  },
+  {
+    "taskId": "T057",
+    "taskTitle": "Write deduplication integration test in tests/integration/dedup.test.ts (re-running sync prevents duplicates)",
+    "linearIssueId": "ITC-107",
+    "linearIssueUuid": "612f4763-da28-437c-b6ff-5c9008534962",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-107/write-deduplication-integration-test-in-testsintegrationdeduptestts-re",
+    "branchName": "ITC-107-write-deduplication-integration-test-in-tests-inte",
+    "createdAt": "2025-10-21T04:52:29.621Z",
+    "updatedAt": "2025-10-21T04:52:29.621Z"
+  },
+  {
+    "taskId": "T058",
+    "taskTitle": "Create comprehensive README.md with installation instructions and quick start guide",
+    "linearIssueId": "ITC-108",
+    "linearIssueUuid": "1c2941ca-64d3-493d-b0dd-1748d0fbb20e",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-108/create-comprehensive-readmemd-with-installation-instructions-and-quick",
+    "branchName": "ITC-108-create-comprehensive-readme-md-with-installation-i",
+    "createdAt": "2025-10-21T04:52:30.406Z",
+    "updatedAt": "2025-10-21T04:52:30.406Z"
+  },
+  {
+    "taskId": "T059",
+    "taskTitle": "Add inline code documentation (JSDoc) for all public functions",
+    "linearIssueId": "ITC-109",
+    "linearIssueUuid": "a66f8cc5-d447-4417-a879-43bba2c528bd",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-109/add-inline-code-documentation-jsdoc-for-all-public-functions",
+    "branchName": "ITC-109-add-inline-code-documentation-jsdoc-for-all-public",
+    "createdAt": "2025-10-21T04:52:31.136Z",
+    "updatedAt": "2025-10-21T04:52:31.136Z"
+  },
+  {
+    "taskId": "T060",
+    "taskTitle": "Create CONTRIBUTING.md with development setup and testing guidelines",
+    "linearIssueId": "ITC-110",
+    "linearIssueUuid": "8612985a-38a3-4b96-9d54-72c474338564",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-110/create-contributingmd-with-development-setup-and-testing-guidelines",
+    "branchName": "ITC-110-create-contributing-md-with-development-setup-and-",
+    "createdAt": "2025-10-21T04:52:31.856Z",
+    "updatedAt": "2025-10-21T04:52:31.856Z"
+  },
+  {
+    "taskId": "T061",
+    "taskTitle": "Add error messages with actionable guidance throughout CLI commands",
+    "linearIssueId": "ITC-111",
+    "linearIssueUuid": "79dea834-ffb6-43c9-b789-110f249192b1",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-111/add-error-messages-with-actionable-guidance-throughout-cli-commands",
+    "branchName": "ITC-111-add-error-messages-with-actionable-guidance-throug",
+    "createdAt": "2025-10-21T04:52:32.635Z",
+    "updatedAt": "2025-10-21T04:52:32.635Z"
+  },
+  {
+    "taskId": "T062",
+    "taskTitle": "Implement graceful error handling for network failures (non-blocking per constitution)",
+    "linearIssueId": "ITC-112",
+    "linearIssueUuid": "fc3c6dea-9da6-4d16-b270-cb9e003ebbf2",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-112/implement-graceful-error-handling-for-network-failures-non-blocking",
+    "branchName": "ITC-112-implement-graceful-error-handling-for-network-fail",
+    "createdAt": "2025-10-21T04:52:33.402Z",
+    "updatedAt": "2025-10-21T04:52:33.402Z"
+  },
+  {
+    "taskId": "T063",
+    "taskTitle": "Create example tasks.md file in examples/sample-tasks.md for testing",
+    "linearIssueId": "ITC-113",
+    "linearIssueUuid": "7ec439ec-4e05-4dad-9246-591fa6954ce0",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-113/create-example-tasksmd-file-in-examplessample-tasksmd-for-testing",
+    "branchName": "ITC-113-create-example-tasks-md-file-in-examples-sample-ta",
+    "createdAt": "2025-10-21T04:52:34.162Z",
+    "updatedAt": "2025-10-21T04:52:34.162Z"
+  },
+  {
+    "taskId": "T064",
+    "taskTitle": "Add version command to CLI in src/cli/commands/version.ts",
+    "linearIssueId": "ITC-114",
+    "linearIssueUuid": "c57cba65-0ee7-431c-9455-fed94da7a39d",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-114/add-version-command-to-cli-in-srcclicommandsversionts",
+    "branchName": "ITC-114-add-version-command-to-cli-in-src-cli-commands-ver",
+    "createdAt": "2025-10-21T04:52:36.926Z",
+    "updatedAt": "2025-10-21T04:52:36.926Z"
+  },
+  {
+    "taskId": "T065",
+    "taskTitle": "Setup CI/CD pipeline configuration (GitHub Actions for test automation)",
+    "linearIssueId": "ITC-115",
+    "linearIssueUuid": "06010f1b-e4e2-438c-b7de-098a71d38c13",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-115/setup-cicd-pipeline-configuration-github-actions-for-test-automation",
+    "branchName": "ITC-115-setup-ci-cd-pipeline-configuration-github-actions-",
+    "createdAt": "2025-10-21T04:52:37.666Z",
+    "updatedAt": "2025-10-21T04:52:37.666Z"
+  },
+  {
+    "taskId": "T066",
+    "taskTitle": "Run quickstart.md validation with real Linear workspace and GitHub repository",
+    "linearIssueId": "ITC-116",
+    "linearIssueUuid": "fca3dfcb-51ce-4512-a116-6871cf325daf",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-116/run-quickstartmd-validation-with-real-linear-workspace-and-github",
+    "branchName": "ITC-116-run-quickstart-md-validation-with-real-linear-work",
+    "createdAt": "2025-10-21T04:52:38.630Z",
+    "updatedAt": "2025-10-21T04:52:38.630Z"
+  },
+  {
+    "taskId": "T067",
+    "taskTitle": "Performance testing for 100 concurrent task sync operations (per FR-005 requirement)",
+    "linearIssueId": "ITC-117",
+    "linearIssueUuid": "c2819c89-be27-4961-a8d5-025179b50295",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-117/performance-testing-for-100-concurrent-task-sync-operations-per-fr-005",
+    "branchName": "ITC-117-performance-testing-for-100-concurrent-task-sync-o",
+    "createdAt": "2025-10-21T04:52:39.469Z",
+    "updatedAt": "2025-10-21T04:52:39.469Z"
+  },
+  {
+    "taskId": "T068",
+    "taskTitle": "Security audit (token redaction in logs, environment variable validation)",
+    "linearIssueId": "ITC-118",
+    "linearIssueUuid": "4d59511f-55e8-4163-b1f7-d0d77fd0fd53",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-118/security-audit-token-redaction-in-logs-environment-variable-validation",
+    "branchName": "ITC-118-security-audit-token-redaction-in-logs-environment",
+    "createdAt": "2025-10-21T04:52:40.267Z",
+    "updatedAt": "2025-10-21T04:52:40.267Z"
+  },
+  {
+    "taskId": "T069",
+    "taskTitle": "Create troubleshooting guide in docs/troubleshooting.md",
+    "linearIssueId": "ITC-119",
+    "linearIssueUuid": "e6fdad70-1cbe-48b8-9de5-d1214994a0ee",
+    "linearIssueUrl": "https://linear.app/itconnect/issue/ITC-119/create-troubleshooting-guide-in-docstroubleshootingmd",
+    "branchName": "ITC-119-create-troubleshooting-guide-in-docs-troubleshooti",
+    "createdAt": "2025-10-21T04:52:41.002Z",
+    "updatedAt": "2025-10-21T04:52:41.002Z"
+  }
+]

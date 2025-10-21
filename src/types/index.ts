@@ -57,6 +57,17 @@ export interface PullRequest {
   url: string;
 }
 
+// Linear Project
+export interface LinearProject {
+  id: string; // UUID
+  name: string;
+  description?: string;
+  state: string; // planned, started, completed, canceled
+  url: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 // Sync event for logging
 export interface SyncEvent {
   type: 'create' | 'update' | 'skip';
