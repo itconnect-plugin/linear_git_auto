@@ -1,0 +1,80 @@
+{
+    "mcpServers": {
+
+        "vibe-check": {
+            "type": "stdio",
+            "command": "node",
+            "args": [
+                "/mnt/i/mcp_test_1/vibe-check-mcp-server/build/index.js"
+            ],
+            "env": {
+                "GEMINI_API_KEY": "AIzaSyAe24QJgQhChQfrV59VBi5WgYNg0naqxX8",
+                "MCP_TRANSPORT": "stdio"
+            }
+        },
+        "Ref": {
+            "type": "http",
+            "url": "https://api.ref.tools/mcp",
+            "headers": {
+                "x-ref-api-key": "ref-ef7fa03c013f41058d28"
+            }
+        },
+        "linear-server": {
+            "type": "sse",
+            "url": "https://mcp.linear.app/sse"
+        },
+        "serena": {
+            "type": "stdio",
+            "command": "uvx",
+            "args": [
+              "--from",
+              "git+https://github.com/oraios/serena",
+              "serena",
+              "start-mcp-server",
+              "--context",
+              "ide-assistant",
+              "--project",
+              "/mnt/i/Linear-github automation"
+            ],
+            "env": {}
+          },
+        "github": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+            }
+        },
+        "vitest": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@madrus/vitest-mcp-server"
+            ],
+            "env": {}
+        },
+        
+        "playwright": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "@playwright/mcp@latest"
+            ],
+            "env": {}
+        },
+        "semgrep": {
+            "type": "stdio",
+            "command": "uvx",
+            "args": [
+                "semgrep-mcp"
+            ],
+            "env": {}
+        }
+
+    }
+}

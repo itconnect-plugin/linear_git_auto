@@ -2,6 +2,11 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import * as fs from 'fs';
 import * as path from 'path';
 import inquirer from 'inquirer';
+import {
+  parseEnvFile,
+  readExistingEnv,
+  updateEnvFile,
+} from '../../../../src/cli/commands/init';
 
 // Mock modules
 vi.mock('fs');
@@ -28,37 +33,34 @@ describe('Init Command - .env Preservation', () => {
   });
 
   describe('Reading existing .env file', () => {
-    it('should read existing .env file and provide as default values', async () => {
+    it('should read existing .env file and return parsed values', () => {
       // Arrange: .env 파일이 이미 존재
       const existingEnv = 'LINEAR_API_KEY=existing-key\nLINEAR_TEAM_ID=existing-team\n';
       vi.mocked(fs.existsSync).mockReturnValue(true);
       vi.mocked(fs.readFileSync).mockReturnValue(existingEnv);
 
-      vi.mocked(inquirer.prompt).mockResolvedValue({
-        linearApiKey: 'existing-key',
-        linearTeamId: 'existing-team',
-      });
+      // Act: readExistingEnv 함수 호출
+      const result = readExistingEnv(envPath);
 
-      // Act: init 명령어 실행 (함수 직접 호출 시뮬레이션)
-      // 실제 구현에서는 inquirer의 default 옵션이 설정되어야 함
-      const promptCall = vi.mocked(inquirer.prompt).mock.calls[0];
-
-      // Assert: inquirer가 기존 값을 default로 받았는지 확인
-      // (실제 테스트에서는 init 함수를 직접 호출)
+      // Assert: 기존 값이 올바르게 파싱되어야 함
       expect(fs.existsSync).toHaveBeenCalledWith(envPath);
       expect(fs.readFileSync).toHaveBeenCalledWith(envPath, 'utf-8');
+      expect(result).toEqual({
+        LINEAR_API_KEY: 'existing-key',
+        LINEAR_TEAM_ID: 'existing-team',
+      });
     });
 
     it('should handle missing .env file gracefully', () => {
       // Arrange: .env 파일이 없음
       vi.mocked(fs.existsSync).mockReturnValue(false);
 
-      // Act & Assert: 에러 없이 진행되어야 함
-      expect(() => {
-        if (!fs.existsSync(envPath)) {
-          // init should provide empty defaults
-        }
-      }).not.toThrow();
+      // Act: readExistingEnv 함수 호출
+      const result = readExistingEnv(envPath);
+
+      // Assert: 빈 객체 반환되어야 함
+      expect(result).toEqual({});
+      expect(fs.readFileSync).not.toHaveBeenCalled();
     });
   });
 
@@ -72,27 +74,25 @@ GITHUB_REPO_OWNER=myuser
 GITHUB_REPO_NAME=myrepo
 `;
 
-      const expectedEnv = `LINEAR_API_KEY=new-key
-LINEAR_TEAM_ID=new-team
-GITHUB_TOKEN=github-token-123
-GITHUB_REPO_OWNER=myuser
-GITHUB_REPO_NAME=myrepo
-`;
-
       vi.mocked(fs.existsSync).mockReturnValue(true);
       vi.mocked(fs.readFileSync).mockReturnValue(existingEnv);
+      vi.mocked(fs.writeFileSync).mockImplementation(() => {});
 
-      // Act: LINEAR 키만 업데이트
-      const updatedEnv = updateEnvFile(existingEnv, {
+      // Act: updateEnvFile 호출
+      updateEnvFile(envPath, {
         LINEAR_API_KEY: 'new-key',
         LINEAR_TEAM_ID: 'new-team',
       });
 
-      // Assert: GITHUB 관련 환경변수 보존
-      expect(updatedEnv).toContain('GITHUB_TOKEN=github-token-123');
-      expect(updatedEnv).toContain('GITHUB_REPO_OWNER=myuser');
-      expect(updatedEnv).toContain('LINEAR_API_KEY=new-key');
-      expect(updatedEnv).toContain('LINEAR_TEAM_ID=new-team');
+      // Assert: writeFileSync가 호출되었고, 모든 환경변수 보존
+      expect(fs.writeFileSync).toHaveBeenCalled();
+      const writtenContent = vi.mocked(fs.writeFileSync).mock.calls[0][1] as string;
+
+      expect(writtenContent).toContain('GITHUB_TOKEN=github-token-123');
+      expect(writtenContent).toContain('GITHUB_REPO_OWNER=myuser');
+      expect(writtenContent).toContain('GITHUB_REPO_NAME=myrepo');
+      expect(writtenContent).toContain('LINEAR_API_KEY=new-key');
+      expect(writtenContent).toContain('LINEAR_TEAM_ID=new-team');
     });
 
     it('should not overwrite entire .env file', () => {
@@ -105,9 +105,15 @@ CUSTOM_VAR=important
       vi.mocked(fs.readFileSync).mockReturnValue(existingEnv);
       vi.mocked(fs.writeFileSync).mockImplementation(() => {});
 
-      // Assert: writeFileSync가 부분 업데이트된 내용만 쓰는지 확인
-      // (실제로는 init 함수 호출 후 검증)
-      expect(true).toBe(true); // Placeholder - will implement in GREEN phase
+      // Act: updateEnvFile 호출
+      updateEnvFile(envPath, {
+        LINEAR_API_KEY: 'new-value',
+      });
+
+      // Assert: 다른 환경변수가 보존되는지 확인
+      const writtenContent = vi.mocked(fs.writeFileSync).mock.calls[0][1] as string;
+      expect(writtenContent).toContain('GITHUB_TOKEN=keep-this');
+      expect(writtenContent).toContain('CUSTOM_VAR=important');
     });
   });
 
@@ -118,59 +124,30 @@ BROKEN LINE WITHOUT EQUALS
 LINEAR_TEAM_ID=team
 `;
 
-      vi.mocked(fs.existsSync).mockReturnValue(true);
-      vi.mocked(fs.readFileSync).mockReturnValue(malformedEnv);
-
       // Should not crash
       const result = parseEnvFile(malformedEnv);
       expect(result).toHaveProperty('LINEAR_API_KEY', 'key');
       expect(result).toHaveProperty('LINEAR_TEAM_ID', 'team');
+      expect(result).not.toHaveProperty('BROKEN LINE WITHOUT EQUALS');
     });
 
     it('should handle empty .env file', () => {
-      vi.mocked(fs.existsSync).mockReturnValue(true);
-      vi.mocked(fs.readFileSync).mockReturnValue('');
-
       const result = parseEnvFile('');
       expect(result).toEqual({});
     });
+
+    it('should skip comment lines', () => {
+      const envWithComments = `# This is a comment
+LINEAR_API_KEY=key
+# Another comment
+LINEAR_TEAM_ID=team
+`;
+
+      const result = parseEnvFile(envWithComments);
+      expect(result).toEqual({
+        LINEAR_API_KEY: 'key',
+        LINEAR_TEAM_ID: 'team',
+      });
+    });
   });
 });
-
-// Helper functions that will be implemented in init.ts
-function parseEnvFile(content: string): Record<string, string> {
-  const result: Record<string, string> = {};
-  const lines = content.split('\n');
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith('#')) continue;
-
-    const equalsIndex = trimmed.indexOf('=');
-    if (equalsIndex === -1) continue;
-
-    const key = trimmed.substring(0, equalsIndex).trim();
-    const value = trimmed.substring(equalsIndex + 1).trim();
-
-    if (key) {
-      result[key] = value;
-    }
-  }
-
-  return result;
-}
-
-function updateEnvFile(
-  existingContent: string,
-  updates: Record<string, string>
-): string {
-  const parsed = parseEnvFile(existingContent);
-
-  // Update with new values
-  Object.assign(parsed, updates);
-
-  // Reconstruct .env file
-  return Object.entries(parsed)
-    .map(([key, value]) => `${key}=${value}`)
-    .join('\n') + '\n';
-}
