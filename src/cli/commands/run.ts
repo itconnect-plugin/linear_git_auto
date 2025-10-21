@@ -22,7 +22,18 @@ export function runCommand(program: Command): void {
         await orchestrator.syncTasksFile(tasksFile);
         logger.info('Sync completed successfully');
       } catch (error) {
-        logger.error({ error }, 'Sync failed');
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        const errorStack = error instanceof Error ? error.stack : undefined;
+        logger.error({
+          error: errorMessage,
+          stack: errorStack,
+          type: error?.constructor?.name
+        }, 'Sync failed');
+        console.error('\n❌ Sync failed:', errorMessage);
+        if (errorStack) {
+          console.error('\nStack trace:');
+          console.error(errorStack);
+        }
         process.exit(1);
       }
     });

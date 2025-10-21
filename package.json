@@ -15,7 +15,13 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
   },
-  "keywords": ["linear", "github", "automation", "cli", "sync"],
+  "keywords": [
+    "linear",
+    "github",
+    "automation",
+    "cli",
+    "sync"
+  ],
   "author": "",
   "license": "MIT",
   "engines": {
@@ -25,6 +31,7 @@
     "@linear/sdk": "^20.0.0",
     "@octokit/rest": "^20.0.0",
     "commander": "^11.0.0",
+    "dotenv": "^17.2.3",
     "inquirer": "^9.0.0",
     "pino": "^8.0.0"
   },
@@ -33,10 +40,10 @@
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
     "eslint": "^8.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.0.0",
-    "vitest": "^1.0.0",
-    "@vitest/coverage-v8": "^1.0.0"
+    "vitest": "^1.0.0"
   }
 }
