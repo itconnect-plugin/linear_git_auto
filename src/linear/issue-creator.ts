@@ -5,13 +5,18 @@ import { LinearDocument } from '@linear/sdk';
 export class IssueCreator {
   constructor(private client: LinearClient) {}
 
-  async createIssue(teamId: string, task: Task): Promise<LinearIssue> {
+  async createIssue(
+    teamId: string,
+    task: Task,
+    projectId?: string
+  ): Promise<LinearIssue> {
     const sdk = this.client.getClient();
 
     const issuePayload = await sdk.createIssue({
       teamId,
       title: task.title,
       description: this.formatDescription(task),
+      projectId, // Add issue to project if provided
     });
 
     const issue = await issuePayload.issue;

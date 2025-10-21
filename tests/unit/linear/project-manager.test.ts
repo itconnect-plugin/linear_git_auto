@@ -8,14 +8,20 @@ vi.mock('../../../src/linear/client');
 describe('ProjectManager', () => {
   let projectManager: ProjectManager;
   let mockLinearClient: any;
+  let mockSdk: any;
 
   beforeEach(() => {
-    mockLinearClient = {
-      getClient: vi.fn(() => ({
-        projects: vi.fn(),
-        createProject: vi.fn(),
-      })),
+    // Create SDK mock with methods
+    mockSdk = {
+      projects: vi.fn(),
+      createProject: vi.fn(),
     };
+
+    // Create Linear client mock that returns the SDK
+    mockLinearClient = {
+      getClient: vi.fn(() => mockSdk),
+    };
+
     projectManager = new ProjectManager(mockLinearClient);
   });
 
@@ -31,8 +37,7 @@ describe('ProjectManager', () => {
         updatedAt: new Date(),
       };
 
-      const sdk = mockLinearClient.getClient();
-      sdk.projects.mockResolvedValue({
+      mockSdk.projects.mockResolvedValue({
         nodes: [mockProject],
       });
 
@@ -42,7 +47,7 @@ describe('ProjectManager', () => {
       );
 
       expect(result).toEqual(mockProject);
-      expect(sdk.projects).toHaveBeenCalledWith({
+      expect(mockSdk.projects).toHaveBeenCalledWith({
         filter: {
           team: { id: { eq: 'team-123' } },
           name: { eq: 'Linear-GitHub Automation' },
@@ -51,8 +56,7 @@ describe('ProjectManager', () => {
     });
 
     it('should return null if project not found', async () => {
-      const sdk = mockLinearClient.getClient();
-      sdk.projects.mockResolvedValue({
+      mockSdk.projects.mockResolvedValue({
         nodes: [],
       });
 
@@ -79,13 +83,12 @@ describe('ProjectManager', () => {
         },
       };
 
-      const sdk = mockLinearClient.getClient();
-      sdk.createProject.mockResolvedValue(mockProjectPayload);
+      mockSdk.createProject.mockResolvedValue(mockProjectPayload);
 
       const result = await projectManager.createProject('team-123', 'New Project');
 
       expect(result).toEqual(mockProjectPayload.project);
-      expect(sdk.createProject).toHaveBeenCalledWith({
+      expect(mockSdk.createProject).toHaveBeenCalledWith({
         teamIds: ['team-123'],
         name: 'New Project',
         description: 'Automated project created from tasks.md sync',
@@ -105,8 +108,7 @@ describe('ProjectManager', () => {
         },
       };
 
-      const sdk = mockLinearClient.getClient();
-      sdk.createProject.mockResolvedValue(mockProjectPayload);
+      mockSdk.createProject.mockResolvedValue(mockProjectPayload);
 
       const result = await projectManager.createProject(
         'team-123',
@@ -115,7 +117,7 @@ describe('ProjectManager', () => {
       );
 
       expect(result).toEqual(mockProjectPayload.project);
-      expect(sdk.createProject).toHaveBeenCalledWith({
+      expect(mockSdk.createProject).toHaveBeenCalledWith({
         teamIds: ['team-123'],
         name: 'Custom Project',
         description: 'Custom description',
@@ -135,8 +137,7 @@ describe('ProjectManager', () => {
         updatedAt: new Date(),
       };
 
-      const sdk = mockLinearClient.getClient();
-      sdk.projects.mockResolvedValue({
+      mockSdk.projects.mockResolvedValue({
         nodes: [existingProject],
       });
 
@@ -146,7 +147,7 @@ describe('ProjectManager', () => {
       );
 
       expect(result).toEqual(existingProject);
-      expect(sdk.createProject).not.toHaveBeenCalled();
+      expect(mockSdk.createProject).not.toHaveBeenCalled();
     });
 
     it('should create new project if not found', async () => {
@@ -160,15 +161,13 @@ describe('ProjectManager', () => {
         updatedAt: new Date(),
       };
 
-      const sdk = mockLinearClient.getClient();
-
       // First call: search returns empty
-      sdk.projects.mockResolvedValue({
+      mockSdk.projects.mockResolvedValue({
         nodes: [],
       });
 
       // Second call: create project
-      sdk.createProject.mockResolvedValue({
+      mockSdk.createProject.mockResolvedValue({
         project: newProject,
       });
 
@@ -178,8 +177,8 @@ describe('ProjectManager', () => {
       );
 
       expect(result).toEqual(newProject);
-      expect(sdk.projects).toHaveBeenCalled();
-      expect(sdk.createProject).toHaveBeenCalled();
+      expect(mockSdk.projects).toHaveBeenCalled();
+      expect(mockSdk.createProject).toHaveBeenCalled();
     });
   });
 });
