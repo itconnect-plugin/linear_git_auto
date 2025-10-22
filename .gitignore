@@ -48,9 +48,13 @@ coverage/
 .claude/
 phase1-test.md
 modify.md
-check-issues.js
-get-team-id.js
-test-tasks.md
 *.backup
 *.png
 *.jpg
+
+# Test scripts (may contain sensitive data)
+check-issues.js
+get-team-id.js
+test-*.js
+*-test.js
+test-tasks.md
