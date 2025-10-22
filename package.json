@@ -1,0 +1,50 @@
+{
+  "name": "linear-github-sync",
+  "version": "0.1.0",
+  "description": "CLI tool to sync Speckit tasks.md with Linear issues and GitHub PRs",
+  "main": "dist/index.js",
+  "bin": {
+    "linear-sync": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest --watch",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
+  },
+  "keywords": [
+    "linear",
+    "github",
+    "automation",
+    "cli",
+    "sync"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@linear/sdk": "^20.0.0",
+    "@octokit/rest": "^20.0.0",
+    "commander": "^11.0.0",
+    "dotenv": "^17.2.3",
+    "inquirer": "^9.0.0",
+    "pino": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}

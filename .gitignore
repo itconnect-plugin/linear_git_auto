@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Global config (user-specific)
+.linear-sync/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+.cache/
+
+# Linear mapping data (preserved - not in gitignore as per constitution)
+# .specify/linear-mapping.json intentionally tracked
+
+# Development and agent files (project-specific)
+.claude/
+phase1-test.md
+modify.md
+check-issues.js
+get-team-id.js
+test-tasks.md
+*.backup
+*.png
+*.jpg
