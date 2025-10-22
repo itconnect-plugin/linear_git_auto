@@ -1,0 +1,1 @@
+{"version":3,"file":"label-manager.js","sourceRoot":"","sources":["../../src/linear/label-manager.ts"],"names":[],"mappings":";;;AAGA,MAAa,YAAY;IACH;IAApB,YAAoB,MAAoB;QAApB,WAAM,GAAN,MAAM,CAAc;IAAG,CAAC;IAE5C,KAAK,CAAC,gBAAgB,CAAC,MAAc,EAAE,IAAY,EAAE,QAAgB,SAAS;QAC5E,gCAAgC;QAChC,OAAO,EAAE,EAAE,EAAE,UAAU,EAAE,IAAI,EAAE,KAAK,EAAE,CAAC;IACzC,CAAC;CACF;AAPD,oCAOC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"dependency-parser.js","sourceRoot":"","sources":["../../src/parsers/dependency-parser.ts"],"names":[],"mappings":";;AAAA,8CAIC;AAJD,SAAgB,iBAAiB,CAAC,WAAmB;IACnD,+DAA+D;IAC/D,MAAM,OAAO,GAAG,WAAW,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC;IAC3C,OAAO,OAAO,IAAI,EAAE,CAAC;AACvB,CAAC"}

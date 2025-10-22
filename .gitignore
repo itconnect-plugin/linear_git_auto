@@ -5,7 +5,7 @@ yarn.lock
 pnpm-lock.yaml
 
 # Build output
-dist/
+# dist/ - Keep for npm installation (needed for global install)
 build/
 *.tsbuildinfo
 

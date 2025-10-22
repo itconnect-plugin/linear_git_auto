@@ -1,0 +1,1 @@
+{"version":3,"file":"metadata-extractor.d.ts","sourceRoot":"","sources":["../../src/parsers/metadata-extractor.ts"],"names":[],"mappings":"AAAA,wBAAgB,eAAe,CAAC,SAAS,EAAE,MAAM,GAAG;IAClD,UAAU,EAAE,OAAO,CAAC;IACpB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,QAAQ,CAAC,EAAE,MAAM,CAAC;CACnB,CAMA"}
