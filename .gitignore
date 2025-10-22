@@ -43,3 +43,14 @@ coverage/
 
 # Linear mapping data (preserved - not in gitignore as per constitution)
 # .specify/linear-mapping.json intentionally tracked
+
+# Development and agent files (project-specific)
+.claude/
+phase1-test.md
+modify.md
+check-issues.js
+get-team-id.js
+test-tasks.md
+*.backup
+*.png
+*.jpg
