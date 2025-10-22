@@ -12,11 +12,13 @@ CLI tool to automatically sync Speckit tasks.md files with Linear issues and Git
 
 ## Installation
 
+> 📖 **상세한 한글 설치 가이드:** [INSTALL.md](./INSTALL.md)
+
 ### From Private GitHub Repository (Recommended)
 
 ```bash
 # Install globally from private repository
-npm install -g git+ssh://git@github.com/your-org/linear-github-sync.git
+npm install -g git+ssh://git@github.com/itconnect-plugin/linear_git_auto.git
 ```
 
 **Requirements:**
