@@ -2,20 +2,18 @@
 
 ## 📦 설치 방법
 
-### Private GitHub Repository에서 설치
+### GitHub Repository에서 설치 (권장)
 
 ```bash
-npm install -g git+ssh://git@github.com/itconnect-plugin/linear_git_auto.git
+npm install -g git+https://github.com/itconnect-plugin/linear_git_auto.git
 ```
 
-**필수 조건:**
-- GitHub SSH 키가 설정되어 있어야 함
-- 저장소 접근 권한 필요
+**인증 불필요!** Public repository이므로 누구나 설치 가능합니다.
 
-### SSH 키 확인
+### 대체 방법: Tarball 직접 설치
+
 ```bash
-ssh -T git@github.com
-# 출력: Hi username! You've successfully authenticated...
+npm install -g https://github.com/itconnect-plugin/linear_git_auto/tarball/master
 ```
 
 ---
@@ -123,7 +121,7 @@ linear-sync status
 새 버전으로 업데이트:
 
 ```bash
-npm install -g git+ssh://git@github.com/itconnect-plugin/linear_git_auto.git
+npm install -g git+https://github.com/itconnect-plugin/linear_git_auto.git
 ```
 
 `prepare` 스크립트가 자동으로 빌드를 실행합니다.
@@ -174,27 +172,7 @@ linear-sync run --file path/to/tasks.md
 
 ## 🔍 트러블슈팅
 
-### 1. SSH 권한 오류
-
-**증상:**
-```
-Permission denied (publickey)
-```
-
-**해결:**
-```bash
-# SSH 키 생성
-ssh-keygen -t ed25519 -C "your_email@example.com"
-
-# SSH 에이전트에 추가
-ssh-add ~/.ssh/id_ed25519
-
-# GitHub에 공개 키 등록
-cat ~/.ssh/id_ed25519.pub
-# 내용 복사 후 GitHub Settings > SSH Keys에 추가
-```
-
-### 2. tasks.md를 찾을 수 없음
+### 1. tasks.md를 찾을 수 없음
 
 **증상:**
 ```
@@ -211,7 +189,7 @@ cd /path/to/project
 linear-sync quickstart
 ```
 
-### 3. Linear API 오류
+### 2. Linear API 오류
 
 **증상:**
 ```
@@ -225,7 +203,7 @@ rm ~/.linear-sync/config.json
 linear-sync quickstart
 ```
 
-### 4. Git hooks 설치 실패
+### 3. Git hooks 설치 실패
 
 **증상:**
 ```
@@ -284,7 +262,7 @@ linear-sync quickstart  # 역시 입력 불필요
 
 3. **Git hooks:** 커밋 메시지에 자동으로 Linear 이슈 ID가 추가됩니다.
 
-4. **빠른 업데이트:** `npm install -g git+ssh://...`로 언제든 최신 버전으로 업데이트 가능합니다.
+4. **빠른 업데이트:** `npm install -g git+https://...`로 언제든 최신 버전으로 업데이트 가능합니다.
 
 ---
 

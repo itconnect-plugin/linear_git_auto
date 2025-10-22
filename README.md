@@ -14,21 +14,19 @@ CLI tool to automatically sync Speckit tasks.md files with Linear issues and Git
 
 > 📖 **상세한 한글 설치 가이드:** [INSTALL.md](./INSTALL.md)
 
-### From Private GitHub Repository (Recommended)
+### From GitHub Repository (Recommended)
 
 ```bash
-# Install globally from private repository
-npm install -g git+ssh://git@github.com/itconnect-plugin/linear_git_auto.git
+# Install globally from GitHub
+npm install -g git+https://github.com/itconnect-plugin/linear_git_auto.git
 ```
 
-**Requirements:**
-- SSH key configured for GitHub access
-- Repository access permissions
+**No authentication required!** Public repository.
 
-### From npm (Public Registry)
+### Alternative: Direct tarball
 
 ```bash
-npm install -g linear-github-sync
+npm install -g https://github.com/itconnect-plugin/linear_git_auto/tarball/master
 ```
 
 ## Quick Start (Recommended)
@@ -152,7 +150,7 @@ linear-sync quickstart  # Reuses saved credentials, no prompts!
 ## Updating to Latest Version
 
 ```bash
-npm install -g git+ssh://git@github.com/your-org/linear-github-sync.git
+npm install -g git+https://github.com/itconnect-plugin/linear_git_auto.git
 ```
 
 The `prepare` script automatically rebuilds during installation.
@@ -181,13 +179,6 @@ npm run dev
 - **Global Config**: Credentials stored securely in user home directory
 
 ## Troubleshooting
-
-### Permission Denied (SSH)
-
-Make sure your SSH key is configured for GitHub:
-```bash
-ssh -T git@github.com
-```
 
 ### Tasks.md Not Found
 
