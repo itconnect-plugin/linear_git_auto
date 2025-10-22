@@ -1,0 +1,54 @@
+# Source files (only dist/ should be published)
+src/
+tests/
+specs/
+
+# Development files
+*.ts
+!*.d.ts
+tsconfig.json
+vitest.config.ts
+.eslintrc*
+.prettierrc*
+
+# Documentation (keep README.md)
+*.md
+!README.md
+
+# Environment and config
+.env*
+.specify/
+
+# Test and coverage
+coverage/
+*.test.ts
+*.spec.ts
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Build artifacts
+*.tsbuildinfo
+
+# Development images and temp files
+*.png
+*.jpg
+*.jpeg
+phase1-test.md
+modify.md
+prd.md
+constitution.md
+CLAUDE.md
+check-issues.js
+get-team-id.js
+test-tasks.md
+tasks.md
+
+# Claude agent configs
+.claude/
+
